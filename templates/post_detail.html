@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post_d['title'] }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ post_d['title'] }}</h1>
+
+    <div class="alert alert-info"> 
+        <p>{{ post_d['text'] }}</p>
+        <a href="/posts/{{ post_d['_id'] }}/delete" class="btn btn-danger">Delete</a>
+        <a href="/posts/{{ post_d['_id'] }}/update" class="btn btn-success">Edit</a>
+    </div>
+     
+</div>
+{% endblock %}

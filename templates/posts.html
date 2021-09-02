@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+all posts
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>posts</h1>
+
+{% if post_l  %}
+    {% for el in post_l %}
+    <div class="alert alert-info">
+        <h2>{{ el['title'] }}</h2>
+        <p>{{ el['intro'] }}</p>
+        <p><b>Date: {{ el['last_mod'] }}</b></p>
+        <a href="/posts/{{ el['_id'] }}" class="btn btn-warning">More</a>
+    </div>
+    {% endfor %}
+{% else %}
+    <p> no posts </p>
+{% endif %}
+
+</div>
+{% endblock %}
